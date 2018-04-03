@@ -1,6 +1,5 @@
 const fs = require('fs');
 const formidable = require('formidable');
-const mv = require('mv');
 
 exports.upload = function (request, response) {
   console.log('Rozpoczynam obsługę żądania upload.');
