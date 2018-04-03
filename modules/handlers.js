@@ -40,7 +40,6 @@ exports.error = function (request, response) {
 }
 
 exports.show = function (request, response) {
-  // err vs error?
   fs.readFile('test.png', 'binary', function (err, file) {
     if (err) throw err;
     response.writeHead(200, {'Content-Type': 'image/png'});
