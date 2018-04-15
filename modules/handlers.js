@@ -4,7 +4,7 @@ const formidable = require('formidable');
 exports.upload = function (request, response) {
   console.log('Rozpoczynam obsługę żądania upload.');
   const form = new formidable.IncomingForm();
-  form.parse(request, function (error, fields, files) {
+  form.parse(request, function (err, fields, files) {
     if (err) throw err;
     fs.renameSync(files.upload.path, 'test.png');
     response.writeHead(200, {'Content-Type': 'text/html'});
