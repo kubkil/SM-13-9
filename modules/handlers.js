@@ -6,7 +6,7 @@ exports.upload = function (request, response) {
   const form = new formidable.IncomingForm();
   form.parse(request, function (err, fields, files) {
     if (err) throw err;
-    fs.renameSync(files.upload.path, 'test.png');
+    fs.renameSync(files.upload.path, files.upload.name);
     response.writeHead(200, {'Content-Type': 'text/html'});
     response.write('received image:<br/>');
     response.write('<img src="/show" />');
